@@ -1,1 +1,552 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Luxury Jewelry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#050505;
+  color:#fff;
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND EFFECT */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+  top:-250px;
+  right:-250px;
+  z-index:-1;
+}
+
+/* HEADER */
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  padding:28px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  backdrop-filter:blur(14px);
+  background:rgba(0,0,0,0.35);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+  font-size:28px;
+  letter-spacing:6px;
+  color:#d4af37;
+  font-family:'Cormorant Garamond',serif;
+}
+
+nav{
+  display:flex;
+  gap:40px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#eee;
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.4s;
+}
+
+nav a:hover{
+  color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 8%;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+  url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1600&auto=format&fit=crop') center/cover;
+  transform:scale(1.1);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:950px;
+  animation:fadeUp 1.2s ease;
+}
+
+.hero-subtitle{
+  color:#d4af37;
+  letter-spacing:5px;
+  font-size:14px;
+  margin-bottom:25px;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:95px;
+  line-height:1;
+  margin-bottom:30px;
+  font-weight:400;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.hero h1 span{
+  color:#d4af37;
+  font-style:italic;
+}
+
+.hero p{
+  color:#d0d0d0;
+  line-height:1.9;
+  font-size:18px;
+  max-width:760px;
+  margin:auto;
+  margin-bottom:45px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:18px 38px;
+  border:1px solid #d4af37;
+  color:#fff;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:12px;
+  transition:.5s;
+}
+
+.btn:hover{
+  background:#d4af37;
+  color:#000;
+  transform:translateY(-5px);
+}
+
+/* BRANDS */
+
+.brands{
+  padding:70px 0;
+  overflow:hidden;
+  border-top:1px solid rgba(255,255,255,0.06);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  background:#0b0b0b;
+}
+
+.brand-track{
+  display:flex;
+  gap:90px;
+  white-space:nowrap;
+  animation:scroll 18s linear infinite;
+}
+
+.brand{
+  font-size:34px;
+  color:#888;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-family:'Cormorant Garamond',serif;
+}
+
+@keyframes scroll{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+/* SECTION */
+
+.section{
+  padding:130px 8%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.section-title h2{
+  font-size:70px;
+  font-weight:400;
+  font-family:'Cormorant Garamond',serif;
+  margin-bottom:20px;
+}
+
+.section-title p{
+  max-width:760px;
+  margin:auto;
+  line-height:1.9;
+  color:#bdbdbd;
+}
+
+/* GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+}
+
+.card{
+  background:#101010;
+  border-radius:30px;
+  overflow:hidden;
+  transition:.5s;
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+.card:hover{
+  transform:translateY(-12px);
+}
+
+.card img{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.card:hover img{
+  transform:scale(1.08);
+}
+
+.card-content{
+  padding:35px;
+}
+
+.card h3{
+  font-size:36px;
+  font-family:'Cormorant Garamond',serif;
+  margin-bottom:16px;
+}
+
+.card p{
+  color:#b9b9b9;
+  line-height:1.8;
+  margin-bottom:24px;
+}
+
+.card a{
+  color:#d4af37;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:12px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.experience img{
+  width:100%;
+  border-radius:30px;
+}
+
+.experience-text h2{
+  font-size:72px;
+  font-weight:400;
+  font-family:'Cormorant Garamond',serif;
+  margin-bottom:25px;
+}
+
+.experience-text p{
+  color:#c8c8c8;
+  line-height:2;
+  margin-bottom:35px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:50px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.05);
+  color:#888;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(60px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:58px;
+  }
+
+  .section-title h2{
+    font-size:48px;
+  }
+
+  .experience{
+    grid-template-columns:1fr;
+  }
+
+  .experience-text h2{
+    font-size:48px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    LUXE
+  </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Collections</a>
+    <a href="#">Brands</a>
+    <a href="#">Exclusive</a>
+    <a href="#">Contact</a>
+  </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-subtitle">
+      Curated Luxury Jewelry Collection
+    </div>
+
+    <h1>
+      Timeless <span>Elegance</span><br>
+      Crafted For Icons
+    </h1>
+
+    <p>
+      Discover elite jewelry inspired by iconic luxury maisons including
+      Cartier, Graff, Tiffany & Co., Bvlgari, and Van Cleef.
+      Exceptional craftsmanship designed for prestige and sophistication.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#" class="btn">Shop Collection</a>
+      <a href="#" class="btn">Book Appointment</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BRANDS -->
+
+<section class="brands">
+
+  <div class="brand-track">
+
+    <div class="brand">Cartier</div>
+    <div class="brand">Graff</div>
+    <div class="brand">Tiffany & Co.</div>
+    <div class="brand">Bvlgari</div>
+    <div class="brand">Van Cleef</div>
+    <div class="brand">Chopard</div>
+
+    <div class="brand">Cartier</div>
+    <div class="brand">Graff</div>
+    <div class="brand">Tiffany & Co.</div>
+    <div class="brand">Bvlgari</div>
+    <div class="brand">Van Cleef</div>
+    <div class="brand">Chopard</div>
+
+  </div>
+
+</section>
+
+<!-- COLLECTION -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>Featured Luxury Pieces</h2>
+
+    <p>
+      Extraordinary jewelry designed with timeless beauty,
+      premium craftsmanship, and iconic luxury inspiration.
+    </p>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>Diamond Rings</h3>
+
+        <p>
+          Exceptional brilliance crafted for prestige and elegance.
+        </p>
+
+        <a href="#">
+          Explore Collection
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>Luxury Necklaces</h3>
+
+        <p>
+          Statement pieces inspired by iconic high jewelry houses.
+        </p>
+
+        <a href="#">
+          Explore Collection
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1603974372039-adc49044b6bd?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>Exclusive Watches</h3>
+
+        <p>
+          Timeless luxury engineered with extraordinary precision.
+        </p>
+
+        <a href="#">
+          Explore Collection
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="section">
+
+  <div class="experience">
+
+    <div class="experience-text">
+
+      <h2>
+        Luxury Beyond Jewelry
+      </h2>
+
+      <p>
+        Every detail is designed to create an unforgettable
+        luxury experience inspired by the world’s most prestigious brands.
+        Elegant aesthetics, cinematic visuals, and timeless sophistication.
+      </p>
+
+      <a href="#" class="btn">
+        Discover More
+      </a>
+
+    </div>
+
+    <div>
+      <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1400&auto=format&fit=crop">
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Luxury Jewelry Maison — Crafted For Elegance
+</footer>
+
+</body>
+</html>
